@@ -24,8 +24,9 @@ echo -e $TEXT_RESET
 
 if [ -f /var/run/reboot-required ]; then
     echo -e $TEXT_RED_B
-    echo 'Reboot required!'
+    echo 'Reboot required! Kindly restart your machine before proceding with installation.'
     echo -e $TEXT_RESET
+    exit 1
 fi
 
 echo "**************************************************************************"
@@ -56,6 +57,7 @@ echo -e $TEXT_RESET
 
 pip install scapy
 pip install PyX
+pip install IPython
 echo -e $TEXT_YELLOW
 echo 'Scapy install finished...'
 echo -e $TEXT_RESET
